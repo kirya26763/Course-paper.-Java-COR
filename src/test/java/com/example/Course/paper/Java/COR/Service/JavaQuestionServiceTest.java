@@ -16,7 +16,7 @@ class JavaQuestionServiceTest {
     @BeforeEach
     void setUp() {
         service = new JavaQuestionService();
-        service.addQuestion(new Question("Что такое JVM?", "Java Virtual Machine"));
+        service.addQuestion(new Question("Что такое ООП?", "Объектно-ориентированное программирование"));
         service.addQuestion(new Question("Что делает static?", "Принадлежность классу"));
     }
 
@@ -28,7 +28,7 @@ class JavaQuestionServiceTest {
 
     @Test
     void removeQuestion_shouldRemoveSuccessfully() {
-        assertTrue(service.removeQuestion("Что такое JVM?"));
+        assertTrue(service.removeQuestion("Что такое ООП?"));
         assertEquals(1, service.getAllQuestions().size());
     }
 
@@ -39,9 +39,9 @@ class JavaQuestionServiceTest {
 
     @Test
     void findQuestion_shouldReturnCorrectQuestion() {
-        Optional<Question> q = service.findQuestion("Что такое JVM?");
+        Optional<Question> q = service.findQuestion("Что такое ООП?");
         assertTrue(q.isPresent());
-        assertEquals("Java Virtual Machine", q.get().getAnswer());
+        assertEquals("Объектно-ориентированное программирование", q.get().getAnswer());
     }
 
     @Test
